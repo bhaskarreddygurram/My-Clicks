@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+body 
+{
+    background-color: #E0EAFC;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+*{
+    box-sizing: border-box;
+    margin: 0;    
+}
+.container{
+    max-width: 1140px;
+    margin: auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.section-title
+ {
+    flex:0 0 100%;
+    max-width: 100%;
+    margin-bottom: 30px;
+
+}
+.section-title h1
+{
+  display: inline-block;
+  font-size: 35px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #000000;
+  margin: 0 0 10px;
+  position: relative;
+  
+}
+.section-title h1:before{
+    content: '';
+    left: 0;
+    position: absolute;
+    height: 2px;
+    right: 30%;
+    background-color: #febd01;
+    bottom: 0px;
+}
+.text-center
+{
+   text-align: center!important; 
+}
+.text-left
+{
+   text-align: left!important; 
+}
+.text-right
+{
+   text-align: right!important; 
+}
+.portfolio
+{
+  background-color:#80ffaa ;
+  padding: 100px 7px;  
+}
+.portfolio .section-title h1::before
+{
+    left: 30%;
+}
+.portfolio .filter-buttons
+{
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.portfolio .filter-buttons ul
+{
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+.portfolio .filter-buttons ul li
+{
+    color: #000000;
+    font-weight: 700;
+    font-size: 16px;
+    display: inline-block;
+    margin: 0px 8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding-bottom: 0px;
+
+}
+.portfolio .filter-buttons ul li.active
+{
+    color: #febd01;
+    border-bottom: 2px solid #febd01;
+}
+.portfolio .filter-buttons
+{
+    margin-bottom: 25px;
+}
+.portfolio .porfolio-gallery
+{
+    flex: 0 0 100% ;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.portfolio .porfolio-gallery .item
+{
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    position: relative;
+    padding: 8px;
+}
+.portfolio .porfolio-gallery .item .container
+{
+    position: relative;
+
+}
+
+.portfolio .porfolio-gallery .item img
+{
+    width: 100%;
+    display: block;
+}
+.portfolio .porfolio-gallery .item .overlay
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0,0, 0.6);
+    z-index: 10;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all .5s ease;
+}
+.portfolio .porfolio-gallery .item:hover .overlay
+{
+    opacity: 1;
+
+}
+.portfolio .porfolio-gallery .item .overlay .fa
+{
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    
+}
+.portfolio .porfolio-gallery .item:hover .overlay .fa{
+    -webkit-animation: galleryIcon .8s ease;
+    animation: galleryIcon .8s ease;
+
+}
+@keyframes galleryIcon
+{
+    0%{
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+.portfolio .porfolio-gallery .item .overlay h4
+{
+    margin-top: 15px;
+    font-size: 25px;
+    color: #ffffff;
+    font-weight: 600;
+   
+}
+.portfolio .porfolio-gallery .item:hover .overlay h4{
+    -webkit-animation: galleryText .8s ease;
+    animation: galleryText .8s ease;
+
+}
+@keyframes galleryText
+{
+    0%{
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.lightbox
+    {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right:0;
+        bottom: 0;
+        z-index: 100;
+        background-color: rgba(0, 0,0,0.6);
+        justify-content: center;
+        align-items: center;
+
+    }
+    .lightbox.show{
+        display: flex;
+    }
+    .lightbox.hide
+    {
+        display: none;
+    }
+    .lightbox .close-lightbox
+    {
+        height: 35px;
+        width: 35px;
+        background-color: white;
+        color: red;
+        text-align: center;
+        line-height: 35px;
+        position: absolute;
+        right: 10px;
+        top:10px;
+        cursor: pointer;
+        border-radius: 50%;
+        z-index: 101;
+    }
+.lightbox img
+{
+    max-width: 90%;
+    max-height: 80%;
+    display: block;    
+}
+.lightbox a
+{
+    color: red;
+    padding: 620px 100px 10px 100px ;
+}
+/*copyright section*/
+.copyright{
+    background-color: #0c0c17;
+    border-top: 2px solid #1d1d27;
+    padding: 15px;
+}
+.copyright p{
+    color: #838383;
+    margin: 0;
+    text-align: center;
+    font-weight: 400;
+    font-size: 15px;
+}
+/*ending copy right*/
